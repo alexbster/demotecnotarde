@@ -13,7 +13,7 @@ RUN rm -rf node_modules/
 FROM node:12-alpine as runtime
 WORKDIR /app
 COPY package*.json /app/
-COPY --from=build /build/dist /app/dist
+COPY --from=build /build/dist/index.js /app/dist/index.js
 RUN apk --no-cache add curl
 EXPOSE 8080
 ENTRYPOINT ["node", "dist/index.js"]
