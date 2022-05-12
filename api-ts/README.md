@@ -155,6 +155,11 @@ ls
 exit
 ```
 
+### Docker Scan
+```sh
+docker scan demotecnotarde2stagecontext
+```
+
 ### Tarea
 
 - [OWASP - Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
