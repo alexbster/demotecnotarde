@@ -4,7 +4,6 @@ built/*
 test-args.txt
 ~*.docx
 \#*\#
-.\#*
 src/harness/*.js
 src/compiler/diagnosticInformationMap.generated.ts
 src/compiler/diagnosticMessages.generated.json
@@ -43,6 +42,5 @@ yarn-error.log
 .parallelperf.*
 .failed-tests
 TEST-results.xml
-tests
 .vscode
 .git
