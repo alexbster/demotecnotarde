@@ -1,0 +1,19 @@
+# Stage 1: Compile and Build application
+FROM node:12-alpine as build
+WORKDIR /build
+COPY package*.json /build/
+RUN npm ci
+RUN npm i -g @zeit/ncc
+COPY ./ /build/
+RUN npm run build
+RUN ncc build ./dist/server.js -o dist
+RUN rm -rf node_modules/
+
+# Stage 2: Runtime container
+FROM node:12-alpine as runtime
+WORKDIR /app
+COPY package*.json /app/
+COPY --from=build /build/dist /app/dist
+RUN apk --no-cache add curl
+EXPOSE 8080
+ENTRYPOINT ["node", "dist/index.js"]
