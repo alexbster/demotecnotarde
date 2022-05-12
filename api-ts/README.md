@@ -79,7 +79,9 @@ exit
 docker build -f ./Dockerfile2stageContext -t demotecnotarde2stagecontext .
 
 docker run -d --name demo2stagecontext -e "TASK_MANAGER_URL=https://pfc-ti.atlassian.net" -p 3003:8080 demotecnotarde2stagecontext
+```
 
+```sh
 curl -X POST 'http://localhost:3003/api/v1/tasks' \
 -u 'micorreo@pfcti.com:token' \
 -H 'Content-Type: application/json' -d '{ "status": ["Ready"] }'
