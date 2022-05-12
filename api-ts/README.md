@@ -47,11 +47,15 @@ docker run -d --name demo2stagencc -e "TASK_MANAGER_URL=https://pfc-ti.atlassian
 curl -X POST 'http://localhost:3000/api/v1/tasks' \
 -u 'micorreo@pfcti.com:token' \
 -H 'Content-Type: application/json' -d '{ "status": ["Ready"] }'
+```
 
+```sh
 curl -X POST 'http://localhost:3001/api/v1/tasks' \
 -u 'micorreo@pfcti.com:token' \
 -H 'Content-Type: application/json' -d '{ "status": ["Ready"] }'
+```
 
+```sh
 curl -X POST 'http://localhost:3002/api/v1/tasks' \
 -u 'micorreo@pfcti.com:token' \
 -H 'Content-Type: application/json' -d '{ "status": ["Ready"] }'
@@ -61,15 +65,37 @@ curl -X POST 'http://localhost:3002/api/v1/tasks' \
 
 ```sh
 docker exec -it demosinglestage /bin/sh
-ls -la
-exit
+```
 
+```sh
+ls -la
+```
+
+```sh
+exit
+```
+
+```sh
 docker exec -it demo2stage /bin/sh
-ls -la
-exit
+```
 
-docker exec -it demo2stagencc /bin/sh
+```sh
 ls -la
+```
+
+```sh
+exit
+```
+
+```sh
+docker exec -it demo2stagencc /bin/sh
+```
+
+```sh
+ls -la
+```
+
+```sh
 exit
 ```
 
@@ -91,14 +117,40 @@ curl -X POST 'http://localhost:3003/api/v1/tasks' \
 
 ```sh
 docker exec -it demo2stage /bin/sh
-whoami
-mkdir we-are-bad-hackers
-ls
-exit
+```
 
-docker exec -it demo2stagecontext /bin/sh
+```sh
 whoami
+```
+
+```sh
 mkdir we-are-bad-hackers
+```
+
+```sh
 ls
+```
+
+```sh
+exit
+```
+
+```sh
+docker exec -it demo2stagecontext /bin/sh
+```
+
+```sh
+whoami
+```
+
+```sh
+mkdir we-are-bad-hackers
+```
+
+```sh
+ls
+```
+
+```sh
 exit
 ```
